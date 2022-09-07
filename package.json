@@ -9,14 +9,19 @@
 		"test": "jest",
 		"lint": "eslint . --ext .ts,.tsx",
 		"reset-cache": "react-native start --reset-cache",
-		"gradle-clean": "cd apps/client/android && ./gradlew clean",
+		"gradle-clean": "cd android && ./gradlew clean",
 		"build-app": "cd android && ./gradlew assembleRelease",
 		"export-app": "cp android/app/build/outputs/apk/release/app-release.apk ~/Desktop/"
 	},
 	"dependencies": {
+		"@react-native-async-storage/async-storage": "^1.17.10",
 		"@reduxjs/toolkit": "^1.8.5",
 		"react": "18.1.0",
-		"react-native": "0.70.0"
+		"react-native": "^0.70.0",
+		"react-native-flipper": "^0.162.0",
+		"react-redux": "^8.0.2",
+		"redux-flipper": "^2.0.2",
+		"redux-persist": "^6.0.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.9",

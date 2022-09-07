@@ -1,4 +1,4 @@
 {
 	"typescript.preferences.importModuleSpecifier": "non-relative",
-	"files.autoSave": "off",
+	"files.autoSave": "afterDelay",
 }
