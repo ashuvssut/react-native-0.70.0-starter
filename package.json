@@ -16,9 +16,12 @@
 	"dependencies": {
 		"@react-native-async-storage/async-storage": "^1.17.10",
 		"@reduxjs/toolkit": "^1.8.5",
+		"@types/react-native-vector-icons": "^6.4.12",
 		"react": "18.1.0",
 		"react-native": "^0.70.0",
 		"react-native-flipper": "^0.162.0",
+		"react-native-paper": "^4.12.4",
+		"react-native-vector-icons": "^9.2.0",
 		"react-redux": "^8.0.2",
 		"redux-flipper": "^2.0.2",
 		"redux-persist": "^6.0.0"

@@ -1,7 +1,6 @@
 import React from "react";
 import { Provider as PaperProvider } from "react-native-paper";
 import { SafeAreaView, SafeAreaProvider } from "react-native-safe-area-context";
-
 import { useCurrentTheme } from "$hooks/theme";
 import Routes from "./navigation";
 import { NavigationContainer } from "@react-navigation/native";
