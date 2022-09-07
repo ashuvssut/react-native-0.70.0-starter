@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"start": "react-native run-android",
+		"dev": "react-native run-android",
 		"ios": "react-native run-ios",
 		"metro": "react-native start",
 		"test": "jest",
@@ -34,6 +34,7 @@
 		"@typescript-eslint/eslint-plugin": "^5.36.2",
 		"@typescript-eslint/parser": "^5.36.2",
 		"babel-jest": "^26.6.3",
+		"babel-plugin-module-resolver": "^4.1.0",
 		"eslint": "^7.32.0",
 		"jest": "^26.6.3",
 		"metro-react-native-babel-preset": "^0.72.1",
