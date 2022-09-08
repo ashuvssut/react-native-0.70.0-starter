@@ -1,23 +1,15 @@
 import { View, Pressable } from "react-native";
 import React, { FC } from "react";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { Text, TouchableRipple } from "react-native-paper";
+import { Text } from "react-native-paper";
 import { useCurrentTheme } from "$hooks/theme";
-import { dp } from "$utils/px2dips";
-import { Nav, Chat, Gift, Foot, Search } from "$svg";
-import { setIsTabUp } from "redux/slices/componentSlice";
-import { useAppDispatch, useAppSelector } from "$hooks/redux";
+import { dp } from "$utils/px2dp";
+import { Nav } from "$svg";
 
 const getIcon = (routeName: string) => {
 	switch (routeName) {
 		case "Home":
 			return Nav;
-		case "Chat":
-			return Chat;
-		case "Rewards":
-			return Gift;
-		case "FootRequests":
-			return Foot;
 		default:
 			return Nav;
 	}
@@ -28,12 +20,7 @@ export const AppTabBar: FC<BottomTabBarProps> = ({
 	descriptors,
 	navigation,
 }) => {
-	const dispatch = useAppDispatch();
-	const isTabUp = useAppSelector(
-		({ compoReducer }) => compoReducer.isDestinationTabUp,
-	);
 	const { colors } = useCurrentTheme();
-	if (state.index === 1) return null; // "ChangeLocation" screen is At index 1
 	return (
 		<View style={{ flexDirection: "row", backgroundColor: colors.surface }}>
 			{state.routes.map((route, index) => {
@@ -47,6 +34,8 @@ export const AppTabBar: FC<BottomTabBarProps> = ({
 				} else {
 					label = route.name;
 				}
+
+				if (["Profile"].includes(label)) return null; // Select which screen are not to be shown on BottomNavTab
 
 				const isFocused = state.index === index;
 
@@ -77,45 +66,6 @@ export const AppTabBar: FC<BottomTabBarProps> = ({
 				const currentColor = isFocused ? colors.accent : colors.placeholder;
 				const Icon = getIcon(route.name);
 
-				if (route.name === "ChangeLocation") return null;
-				if (route.name === "ShowBuddies") {
-					if (state.index !== 0) {
-						return null;
-					}
-					return (
-						<View style={{ flex: 1 }} key={route.key}>
-							<View
-								style={{
-									position: "absolute",
-									backgroundColor: colors.accent,
-									height: dp(187),
-									width: dp(187),
-									borderRadius: dp(187),
-									overflow: "hidden",
-									bottom: 5,
-									left: 0,
-									elevation: 6,
-								}}
-							>
-								<TouchableRipple
-									style={{
-										justifyContent: "center",
-										alignItems: "center",
-										height: "100%",
-									}}
-									onPress={() => {
-										isTabUp
-											? dispatch(setIsTabUp(false))
-											: dispatch(setIsTabUp(true));
-									}}
-									rippleColor={colors.placeholder}
-								>
-									<Search height={dp(70)} width={dp(70)} color="white" />
-								</TouchableRipple>
-							</View>
-						</View>
-					);
-				}
 				return (
 					<Pressable
 						key={route.key}

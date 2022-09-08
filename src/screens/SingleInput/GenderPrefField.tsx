@@ -1,4 +1,4 @@
-import { dp } from "$utils/px2dips";
+import { dp } from "$utils/px2dp";
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 import { RadioButton, Text } from "react-native-paper";

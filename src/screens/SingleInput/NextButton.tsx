@@ -1,5 +1,5 @@
 import { useCurrentTheme } from "$hooks/theme";
-import { dp } from "$utils/px2dips";
+import { dp } from "$utils/px2dp";
 import React, { FC } from "react";
 import { Keyboard } from "react-native";
 import { Button } from "react-native-paper";

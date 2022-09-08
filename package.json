@@ -11,7 +11,8 @@
 		"reset-cache": "react-native start --reset-cache",
 		"gradle-clean": "cd android && ./gradlew clean",
 		"build-app": "cd android && ./gradlew assembleRelease",
-		"export-app": "cp android/app/build/outputs/apk/release/app-release.apk ~/Desktop/"
+		"export-app": "cp android/app/build/outputs/apk/release/app-release.apk ~/Desktop/",
+		"keytool": "cd ./android/app && keytool -list -v -alias androiddebugkey -keystore ./debug.keystore"
 	},
 	"dependencies": {
 		"@react-native-async-storage/async-storage": "^1.17.10",

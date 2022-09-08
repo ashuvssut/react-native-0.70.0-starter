@@ -1,7 +1,7 @@
 import { useAppSelector } from "$hooks/redux";
 import { useCurrentTheme } from "$hooks/theme";
 import { Menu } from "$svg";
-import { dp, sp } from "$utils/px2dips";
+import { dp, sp } from "$utils/px2dp";
 import React, { FC, useEffect, useState } from "react";
 import { StyleProp, View, ViewStyle } from "react-native";
 import { Headline, Text } from "react-native-paper";

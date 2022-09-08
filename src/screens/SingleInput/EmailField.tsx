@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from "$hooks/redux";
 import { useCurrentTheme } from "$hooks/theme";
-import { dp, sp } from "$utils/px2dips";
+import { dp, sp } from "$utils/px2dp";
 import React from "react";
 import { View } from "react-native";
 import { HelperText, TextInput } from "react-native-paper";

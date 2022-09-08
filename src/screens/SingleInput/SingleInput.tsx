@@ -5,7 +5,7 @@ import { Title1 } from "components/Texts";
 import { KeyboardUsingScreen } from "components/KeyboardUsingScreen";
 import { Appbar, Paragraph } from "react-native-paper";
 import { useCurrentTheme } from "$hooks/theme";
-import { dp, sp } from "$utils/px2dips";
+import { dp, sp } from "$utils/px2dp";
 
 export interface ISingleInput extends INavProps {
 	title: string;

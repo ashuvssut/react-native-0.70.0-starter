@@ -13,25 +13,24 @@ module.exports = function (api) {
 				"module-resolver",
 				{
 					extensions: [
-						".js",
-						".jsx",
 						".ts",
 						".tsx",
-						".android.js",
+						".android.ts",
 						".android.tsx",
-						".ios.js",
+						".ios.ts",
 						".ios.tsx",
 					],
 					root: ["./src"],
 					alias: {
 						$hooks: ["./src/theme", "./src/hooks"],
-						$types: ["./src/types/*"],
+						$types: ["./src/types"],
 						"$types/redux": ["./src/redux/types"],
 						$svg: ["./src/assets/svg/index"],
-						$utils: ["./src/utils/*"],
+						$utils: ["./src/utils"],
 					},
 				},
 			],
 		],
+		// plugins: ["react-native-reanimated/plugin"], // !! Reanimated plugin has to be listed last.
 	};
 };

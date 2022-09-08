@@ -1,4 +1,4 @@
-import { dp, sp } from "$utils/px2dips";
+import { dp, sp } from "$utils/px2dp";
 import React, { FC, useEffect, useMemo, useRef, useState } from "react";
 import {
 	FlatList,
