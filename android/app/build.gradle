@@ -1,4 +1,5 @@
 apply plugin: "com.android.application"
+apply plugin: 'com.google.gms.google-services' // !! Added for firebase
 
 import com.android.build.OutputFile
 import org.apache.tools.ant.taskdefs.condition.Os
@@ -255,6 +256,14 @@ android {
 }
 
 dependencies {
+    implementation platform("com.google.firebase:firebase-bom:30.4.0") // !! Added for Firebase
+    implementation "com.google.firebase:firebase-auth" 
+    // implementation "com.google.firebase:firebase-database"
+    // implementation "com.google.android.gms:play-services-ads"
+    // implementation "com.google.firebase:firebase-messaging"
+    //? implementation "com.google.firebase:firebase-inappmessaging"
+    //? implementation "com.google.firebase:firebase-inappmessaging-display"
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     //noinspection GradleDynamicVersion

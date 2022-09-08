@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "155963443734",
+    "project_id": "project-minami",
+    "storage_bucket": "project-minami.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:155963443734:android:025cfe51342a7f76ce8337",
+        "android_client_info": {
+          "package_name": "com.lilac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "155963443734-tp14eqtk717rnas738ddk5dqta9vir47.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lilac",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "155963443734-mveps0jfna1i95p1qu059esg4rdr3956.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYe1k0lKWOhH9pSHBnxZGZdMWGGEATnxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "155963443734-mveps0jfna1i95p1qu059esg4rdr3956.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
