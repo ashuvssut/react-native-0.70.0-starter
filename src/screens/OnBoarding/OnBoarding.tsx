@@ -3,11 +3,11 @@ import React, { FC } from "react";
 import Slider from "./Slider";
 import Slide from "./Slide";
 import { Slide1, Slide2, Slide3, Slide4, Slide5 } from "$svg";
-import { INavProps } from "$types/INavProps";
 import { useAppSelector } from "$hooks/redux";
 import MistouchExitPrevention from "components/MistouchExitPrevention";
 import { StatusBar } from "react-native";
 import { useCurrentTheme } from "$hooks/theme";
+import { TOnBoardingScreen } from "navigation/AuthStack/AuthStack";
 
 export const slides = [
 	{
@@ -34,7 +34,7 @@ export const slides = [
 
 export const assets = slides.map(({ picture }) => picture);
 
-export const OnBoarding: FC<INavProps> = ({ navigation }) => {
+export const OnBoarding: TOnBoardingScreen = ({ navigation }) => {
 	const index = useAppSelector(state => state.compoReducer.slideIndex);
 
 	const prev = slides[index - 1];

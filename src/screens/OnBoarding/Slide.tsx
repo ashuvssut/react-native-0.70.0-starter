@@ -1,6 +1,7 @@
 import { useAppDispatch } from "$hooks/redux";
 import { defaultTheme } from "$hooks/theme";
-import { INavProps } from "$types/INavProps";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { AuthStackParamList } from "navigation/AuthStack/AuthStack";
 import React, { FC, ReactElement } from "react";
 import { View, StyleSheet, Dimensions } from "react-native";
 import { Button } from "react-native-paper";
@@ -8,12 +9,13 @@ import Svg, { Rect } from "react-native-svg";
 import { setSlideIndex } from "redux/slices/componentSlice";
 import { slides } from "screens/OnBoarding";
 
-export interface ISlide extends INavProps {
+export interface ISlide {
 	slide: {
 		color: string;
 		picture: ReactElement;
 	};
 	isLast?: boolean;
+	navigation: NativeStackNavigationProp<AuthStackParamList, "OnBoarding">;
 }
 
 const useStyles = (color: string) =>
@@ -71,7 +73,9 @@ const Slide: FC<ISlide> = ({ slide, isLast, navigation }) => {
 									fontSize: 16,
 									textTransform: "capitalize",
 								}}
-								onPress={() => navigation.navigate("Register")}
+								onPress={() =>
+									navigation.navigate("RegisterStack", { screen: "MobileNum" })
+								}
 							>
 								Sign in
 							</Button>
@@ -84,7 +88,9 @@ const Slide: FC<ISlide> = ({ slide, isLast, navigation }) => {
 									fontSize: 16,
 									textTransform: "capitalize",
 								}}
-								onPress={() => navigation.navigate("Login")}
+								onPress={() =>
+									navigation.navigate("RegisterStack", { screen: "MobileNum" })
+								}
 							>
 								Log in
 							</Button>

@@ -5,6 +5,7 @@ import PhoneField from "screens/SingleInput/PhoneField";
 import OTPField from "screens/SingleInput/OTPField";
 import { useAppSelector } from "$hooks/redux";
 import { parsePhoneNumber } from "libphonenumber-js";
+import { TRegisterStack } from "navigation/AuthStack/AuthStack";
 // import EmailField from "screens/SingleInput/EmailField";
 // import GenderPrefField from "screens/SingleInput/GenderPrefField";
 
@@ -14,7 +15,7 @@ export type RegisterStackParamList = {
 };
 const Stack = createNativeStackNavigator<RegisterStackParamList>();
 
-const RegisterStack: FC = () => {
+const RegisterStack: TRegisterStack = () => {
 	let phnNum = useAppSelector(
 		({ compoReducer }) => compoReducer.phNumberData.phNum,
 	);
