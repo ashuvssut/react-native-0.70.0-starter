@@ -1,4 +1,4 @@
-import { useAppDispatch, useAppSelector } from "$hooks/redux";
+/* import { useAppDispatch, useAppSelector } from "$hooks/redux";
 import { useCurrentTheme } from "$hooks/theme";
 import { dp, sp } from "$utils/px2dp";
 import React from "react";
@@ -23,16 +23,13 @@ const EmailField = () => {
 			<TextInput
 				value={email}
 				onChangeText={val => {
-					val = val.trim()
+					val = val.trim();
 					isEmailValidnErrVisible &&
 						dispatch(setIsEmailValidnErrVisible(false));
 
 					dispatch(setEmail(val));
 				}}
-				style={{
-					backgroundColor: "#ffffff00",
-					fontSize: sp(51),
-				}}
+				style={{ backgroundColor: "#ffffff00", fontSize: sp(51) }}
 				underlineColor={placeholder}
 				activeUnderlineColor={secondaryText}
 				placeholder="example@email.com"
@@ -48,3 +45,5 @@ const EmailField = () => {
 };
 
 export default EmailField;
+*/
+export {};

@@ -1,12 +1,9 @@
 import React from "react";
 import { Screen } from "components/Screen";
-import { useCurrentTheme } from "$hooks/theme";
 import { StatusBar } from "react-native";
+import { TProfileScreen } from "navigation/AppStack/AppStack";
 
-export const Profile = ({ navigation }) => {
-	const theme = useCurrentTheme();
-	const { surface } = theme.colors;
-
+export const Profile: TProfileScreen = () => {
 	return (
 		<>
 			<StatusBar />

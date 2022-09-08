@@ -1,1 +1,3 @@
-export { SingleInput, ISingleInput } from "./SingleInput";
+export { SingleInput } from "./SingleInput";
+export type { ISingleInput } from "./SingleInput";
+

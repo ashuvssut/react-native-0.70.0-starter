@@ -8,7 +8,11 @@ import { parsePhoneNumber } from "libphonenumber-js";
 // import EmailField from "screens/SingleInput/EmailField";
 // import GenderPrefField from "screens/SingleInput/GenderPrefField";
 
-const Stack = createNativeStackNavigator();
+export type RegisterStackParamList = {
+	MobileNum: undefined; // type of initialParams prop
+	MobileOTP: undefined;
+};
+const Stack = createNativeStackNavigator<RegisterStackParamList>();
 
 const RegisterStack: FC = () => {
 	let phnNum = useAppSelector(

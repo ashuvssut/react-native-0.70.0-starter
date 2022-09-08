@@ -67,3 +67,4 @@ buck-out/
 .env
 .dump
 .misc
+.vscode/settings.json

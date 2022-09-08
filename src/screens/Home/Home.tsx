@@ -1,12 +1,9 @@
 import React from "react";
 import { Screen } from "components/Screen";
-import { useCurrentTheme } from "$hooks/theme";
 import { StatusBar } from "components/StatusBar";
+import { THomeScreen } from "navigation/AppStack/AppStack";
 
-export const Home = ({ navigation }) => {
-	const theme = useCurrentTheme();
-	const { surface } = theme.colors;
-
+export const Home: THomeScreen = ({}) => {
 	return (
 		<>
 			<StatusBar />
