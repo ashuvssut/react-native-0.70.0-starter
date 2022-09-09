@@ -21,11 +21,7 @@ yarn install
 	```
 -	Start creating & running the Development build.
 	```bash
-	yarn dev # for android
-	```
-	**OR**
-	```bash
-	yarn ios # for iOS
+	yarn dev # for android.
 	```
 	
 Done! Your Project should run just fine.
@@ -69,6 +65,7 @@ This Project uses the packages mentioned below. These packages are already confi
    - react-native-redash: 18.0.0
 
 ### Known Problems
+- Right now this starter template is only tested for android. **This starter template is not tested for iOS. It will need additional configurations**
 - This Project can not use React Native's new Architecture with Fabric rendrer because Reanimated v2 does not support the new architecure.
 
 - The new reanimated v3 will support the new Architecture (Currently only RC version is available. I will wait for its Stable release). The RC version did not work out as it had a few Build errors (I tested with Reanimated v3.0.0-rc.2). To learn how to install Reanimated v3 [follow this link](https://blog.swmansion.com/announcing-reanimated-3-16167428c5f7)
