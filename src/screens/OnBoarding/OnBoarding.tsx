@@ -1,5 +1,4 @@
-import React, { FC } from "react";
-
+import React from "react";
 import Slider from "./Slider";
 import Slide from "./Slide";
 import { Slide1, Slide2, Slide3, Slide4, Slide5 } from "$svg";

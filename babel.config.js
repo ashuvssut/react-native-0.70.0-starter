@@ -30,7 +30,7 @@ module.exports = function (api) {
 					},
 				},
 			],
+			"react-native-reanimated/plugin", // !! added Reanimated plugin. It has to be listed last.
 		],
-		// plugins: ["react-native-reanimated/plugin"], // !! Reanimated plugin has to be listed last.
 	};
 };

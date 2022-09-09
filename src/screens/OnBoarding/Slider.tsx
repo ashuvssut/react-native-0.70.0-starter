@@ -1,6 +1,5 @@
 import React, { FC, ReactElement, useEffect } from "react";
 import { StyleSheet } from "react-native";
-
 import Wave, { HEIGHT, MARGIN_WIDTH, MIN_LEDGE, WIDTH } from "./Wave";
 import Button from "./Button";
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
