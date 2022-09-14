@@ -5,17 +5,24 @@ import PhoneField from "screens/SingleInput/PhoneField";
 import OTPField from "screens/SingleInput/OTPField";
 import { useAppSelector } from "$hooks/redux";
 import { parsePhoneNumber } from "libphonenumber-js";
-import { TRegisterStack } from "navigation/AuthStack/AuthStack";
+import { NativeStackScreenProps as NSSProps } from "@react-navigation/native-stack";
+import { FirebaseAuthTypes } from "@react-native-firebase/auth";
 // import EmailField from "screens/SingleInput/EmailField";
 // import GenderPrefField from "screens/SingleInput/GenderPrefField";
 
 export type RegisterStackParamList = {
-	MobileNum: undefined; // type of initialParams prop
-	MobileOTP: undefined;
+	PhoneField: undefined;
+	OTPField: {
+		confirmationResult: FirebaseAuthTypes.ConfirmationResult;
+	};
 };
+export type RegisterStackScreens = keyof RegisterStackParamList;
+export type TPhoneFieldProps = NSSProps<RegisterStackParamList, "PhoneField">;
+export type TOTPFieldProps = NSSProps<RegisterStackParamList, "OTPField">;
+
 const Stack = createNativeStackNavigator<RegisterStackParamList>();
 
-const RegisterStack: TRegisterStack = () => {
+const RegisterStack: FC = () => {
 	let phnNum = useAppSelector(
 		({ compoReducer }) => compoReducer.phNumberData.phNum,
 	);
@@ -29,25 +36,25 @@ const RegisterStack: TRegisterStack = () => {
 	// const email = useAppSelector(({ compoReducer }) => compoReducer.email);
 
 	return (
-		<Stack.Navigator initialRouteName="MobileNum">
-			<Stack.Screen options={{ header: () => null }} name="MobileNum">
-				{props => (
+		<Stack.Navigator initialRouteName="PhoneField">
+			<Stack.Screen options={{ header: () => null }} name="PhoneField">
+				{React.memo(props => (
 					<SingleInput
 						{...props}
 						title={`Enter your ${"\n"}mobile number`}
-						fieldCompo={<PhoneField {...props} nextRoute="MobileOTP" />}
+						fieldCompo={<PhoneField {...props} nextRoute="OTPField" />}
 					/>
-				)}
+				))}
 			</Stack.Screen>
-			<Stack.Screen options={{ header: () => null }} name="MobileOTP">
-				{props => (
+			<Stack.Screen options={{ header: () => null }} name="OTPField">
+				{React.memo(props => (
 					<SingleInput
 						{...props}
 						title={`Verify your ${"\n"}mobile number`}
 						subtitle={`Enter the 6-digit OTP sent to ${phnNum}`}
 						fieldCompo={<OTPField {...props} />}
 					/>
-				)}
+				))}
 			</Stack.Screen>
 			{/* <Stack.Screen options={{ header: () => null }} name="Email">
 				{props => (
@@ -66,7 +73,7 @@ const RegisterStack: TRegisterStack = () => {
 						{...props}
 						title={`Verify your ${"\n"}Email address`}
 						subtitle={`Enter the 4-digit OTP sent to ${email}`}
-						nextRoute="MobileNum"
+						nextRoute="PhoneField"
 						fieldCompo={<OTPField />}
 					/>
 				)}

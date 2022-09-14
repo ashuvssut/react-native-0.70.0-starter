@@ -26,12 +26,16 @@ import { useAppDispatch } from "$hooks/redux";
 import { setPhNumberData } from "redux/slices/componentSlice";
 import NextButton from "screens/SingleInput/NextButton";
 import auth, { FirebaseAuthTypes } from "@react-native-firebase/auth";
-import { INavProps } from "$types/INavProps";
+import {
+	RegisterStackScreens,
+	TPhoneFieldProps,
+} from "navigation/AuthStack/RegisterStack";
 import { setUID } from "redux/slices/userSlice";
 
-interface IPhoneField extends INavProps {
-	nextRoute: string;
+interface IPhoneField extends TPhoneFieldProps {
+	nextRoute: RegisterStackScreens;
 }
+
 const PhoneField: FC<IPhoneField> = ({ navigation, nextRoute }) => {
 	const dispatch = useAppDispatch();
 
@@ -126,7 +130,7 @@ const PhoneField: FC<IPhoneField> = ({ navigation, nextRoute }) => {
 		if (confirmationResult != null) {
 			setAllowNav(true);
 		}
-		if (allowNav) {
+		if (allowNav && confirmationResult) {
 			setAllowNav(false);
 			const confirmation = confirmationResult;
 			setConfirmationResult(null);

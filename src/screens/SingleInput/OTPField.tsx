@@ -4,38 +4,29 @@ import React, { FC, ReactNode, useEffect, useState } from "react";
 import { StyleSheet, TextInput, View } from "react-native";
 import { HelperText, Text } from "react-native-paper";
 import NextButton from "screens/SingleInput/NextButton";
-import { INavProps } from "$types/INavProps";
+
 import { firebase } from "@react-native-firebase/auth";
 import { useAppDispatch } from "$hooks/redux";
 import { setUID } from "redux/slices/userSlice";
+import { TOTPFieldProps } from "navigation/AuthStack/RegisterStack";
 
-interface IOTPField extends INavProps {}
-// interface INavProps {
-// 	route: {
-// 		params: {
-// 			confirmationResult: FirebaseAuthTypes.ConfirmationResult;
-// 		};
-// 	};
-// } // help plz
+interface IOTPField extends TOTPFieldProps {}
 
 const OTPField: FC<IOTPField> = ({ route }) => {
-	// @ts-ignore
-	const { confirmationResult } = route!.params; // help plz
+	const { confirmationResult } = route.params;
 	const OTP_LENGTH = 6;
 
 	const { colors } = useCurrentTheme();
 	const [otpCode, setOtpCode] = useState("");
 	const [isOtpValidnErrVisible, setIsOtpValidnErrVisible] = useState(false);
 
-	const dispatch = useAppDispatch()
+	const dispatch = useAppDispatch();
 	useEffect(() => {
 		setOtpCode("");
 		firebase.auth().onAuthStateChanged(user => {
 			if (user) {
 				console.log("User signed in", user);
-				dispatch(
-					setUID(user.uid),
-				);
+				dispatch(setUID(user.uid));
 			} else {
 				console.log("No user signed in");
 			}

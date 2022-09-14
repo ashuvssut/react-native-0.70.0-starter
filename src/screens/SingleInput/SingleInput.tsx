@@ -1,16 +1,24 @@
 import React, { FC, ReactNode } from "react";
 
-import { INavProps } from "$types/INavProps";
 import { Title1 } from "components/Texts";
 import { KeyboardUsingScreen } from "components/KeyboardUsingScreen";
 import { Appbar, Paragraph } from "react-native-paper";
 import { useCurrentTheme } from "$hooks/theme";
 import { dp, sp } from "$utils/px2dp";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import {
+	RegisterStackParamList,
+	RegisterStackScreens,
+} from "navigation/AuthStack/RegisterStack";
 
-export interface ISingleInput extends INavProps {
+export interface ISingleInput {
 	title: string;
 	subtitle?: string;
 	fieldCompo: ReactNode;
+	navigation: NativeStackNavigationProp<
+		RegisterStackParamList,
+		RegisterStackScreens
+	>;
 }
 
 export const SingleInput: FC<ISingleInput> = ({
