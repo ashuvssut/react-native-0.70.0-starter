@@ -38,23 +38,23 @@ const RegisterStack: FC = () => {
 	return (
 		<Stack.Navigator initialRouteName="PhoneField">
 			<Stack.Screen options={{ header: () => null }} name="PhoneField">
-				{React.memo(props => (
+				{props => (
 					<SingleInput
 						{...props}
 						title={`Enter your ${"\n"}mobile number`}
 						fieldCompo={<PhoneField {...props} nextRoute="OTPField" />}
 					/>
-				))}
+				)}
 			</Stack.Screen>
 			<Stack.Screen options={{ header: () => null }} name="OTPField">
-				{React.memo(props => (
+				{props => (
 					<SingleInput
 						{...props}
 						title={`Verify your ${"\n"}mobile number`}
 						subtitle={`Enter the 6-digit OTP sent to ${phnNum}`}
 						fieldCompo={<OTPField {...props} />}
 					/>
-				))}
+				)}
 			</Stack.Screen>
 			{/* <Stack.Screen options={{ header: () => null }} name="Email">
 				{props => (
