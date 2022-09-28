@@ -1,6 +1,6 @@
 # React Native 0.70.0 project starter (Opinionated)
 
-Get Started with React Native 0.70.0 project with an opinionated Folder Structure along with pre-configured popular packages like Reanimated v2, React Native Gesture Handler, React Navigation v6, Flipper Debugger, Firebase Auth, React Native Paper, React Native Vector Icons, Redux Toolkit, Redux Persist. 
+Get Started with React Native 0.70.0 project with an opinionated Folder Structure along with pre-configured popular packages like Reanimated v2, React Native Gesture Handler, React Navigation v6, Flipper Debugger, Firebase Auth, React Native Paper, React Native Vector Icons, Redux Toolkit, Redux Persist. **Bonus**: Pre Configure GitHub Action for automatically generating the app's apk when code is pushed to main branch!
 
 ### Getting Started
 Clone this RN 0.70.0 starter project and replace the word "lilac" with your project name everywhere. Rename Folders having word "lilac" with you project name. 
