@@ -6,12 +6,10 @@ Get Started with React Native 0.70.0 project with an opinionated Folder Structur
 - Clone this RN 0.70.0 starter project 
 - Replace the word "lilac" with your project name everywhere. 
 - Rename Folders having word "lilac" with you project name. 
-<!-- !! Script has issues right now
- Good for you we have a script (`./rename-all.sh`) for you just to do that. Run the following
+  Good for you we have a script (`./rename-all.sh`) just to do that. Run the following:-
   ```bash
   ./rename-all.sh my-awesome-project
   ```
--->
 > NOTE: app package name is of the form of `com.<project-name>`
 
 

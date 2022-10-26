@@ -7,7 +7,7 @@ if [ "$1" ]; then
 
 	echo "Renaming.."
 
-	find . -type f -name "*${query}*" | while read -r FILE; do
+	find . -type f -or -type d -name "*${query}*" | while read -r FILE; do
 		newfile=$(echo ${FILE} | sed -e "s/${query}/${replacement}/")
 		mv "${FILE}" "${newfile}"
 	done
