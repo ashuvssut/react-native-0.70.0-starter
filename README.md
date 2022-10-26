@@ -3,7 +3,15 @@
 Get Started with React Native 0.70.0 project with an opinionated Folder Structure along with pre-configured popular packages like Reanimated v2, React Native Gesture Handler, React Navigation v6, Flipper Debugger, Firebase Auth, React Native Paper, React Native Vector Icons, Redux Toolkit, Redux Persist. **Bonus**: Pre Configure GitHub Action for automatically generating the app's apk when code is pushed to main branch!
 
 ### Getting Started
-Clone this RN 0.70.0 starter project and replace the word "lilac" with your project name everywhere. Rename Folders having word "lilac" with you project name. 
+- Clone this RN 0.70.0 starter project 
+- Replace the word "lilac" with your project name everywhere. 
+- Rename Folders having word "lilac" with you project name. 
+<!-- !! Script has issues right now
+ Good for you we have a script (`./rename-all.sh`) for you just to do that. Run the following
+  ```bash
+  ./rename-all.sh my-awesome-project
+  ```
+-->
 > NOTE: app package name is of the form of `com.<project-name>`
 
 
